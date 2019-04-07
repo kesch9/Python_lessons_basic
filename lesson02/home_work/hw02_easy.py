@@ -11,15 +11,34 @@
 # 3.   киви
 # 4.  арбуз
 
+testArr = ["яблоко", "банан", "киви", "арбуз", "арбуз"]
+step = 1
+for i in testArr:
+    print("{} {}".format(step,i))
+    step += 1
 # Подсказка: воспользоваться методом .format()
 
 
 # Задача-2:
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
-
+testArr2 = ["яблоко", "арбуз"]
+for i in testArr[:]:
+    if i in testArr2:
+        testArr.remove(i)
+print(testArr)
 
 # Задача-3:
 # Дан произвольный список из целых чисел.
 # Получите НОВЫЙ список из элементов исходного, выполнив следующие условия:
 # если элемент кратен двум, то разделить его на 4, если не кратен, то умножить на два.
+import random
+testLst = [random.randint(0, 1000) for _ in range(10)]
+print(testLst)
+newLst = []
+for i in testLst:
+    if i % 2 == 0:
+        newLst.append(i / 4)
+    else:
+        newLst.append(i * 2)
+print(newLst)
