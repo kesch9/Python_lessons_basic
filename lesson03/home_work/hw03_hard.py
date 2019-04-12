@@ -1,3 +1,4 @@
+import os
 # Задание-1:
 # Написать программу, выполняющую операции (сложение и вычитание) с простыми дробями.
 # Дроби вводятся и выводятся в формате:
@@ -18,6 +19,19 @@
 # они получают удвоенную ЗП, пропорциональную норме.
 # Кол-во часов, которые были отработаны, указаны в файле "data/hours_of"
 
+path_hours_of = os.path.join('data', 'hours_of')
+with open(os.path.join('data', 'workers'), 'r', encoding='UTF-8') as f:
+    workers = []
+    for line in f:
+        workers.append(line.split())
+    print(workers)
+
+with open(os.path.join('data', 'hours_of'), 'r', encoding='UTF-8') as f:
+    for line in f:
+        hours = []
+        for line in f:
+            hours.append(line.split())
+        print(hours)
 
 # Задание-3:
 # Дан файл ("data/fruits") со списком фруктов.
