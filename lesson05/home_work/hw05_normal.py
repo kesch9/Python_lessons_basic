@@ -13,3 +13,32 @@
 # Для решения данной задачи используйте алгоритмы из задания easy,
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
+from os import listdir,getcwd,chdir
+from lesson05.home_work.hw05_easy import create_dir,delete_dir
+
+print("Утилита может следующее")
+print("1. Перейти в папку")
+print("2. Просмотреть содержимое текущей папки")
+print("3. Удалить папку")
+print("4. Создать папку")
+print("0. Выход")
+while True:
+    select = int(input("Ввведите что хотите сделать "))
+    if  select == 1:
+        path = input("Введите куда попасть ")
+        try:
+            chdir(path)
+        except FileNotFoundError:
+            print("Такой директории нет")
+        except ValueError:
+            print("Вы ввели чушь")
+    elif select == 2:
+        print(listdir(getcwd()))
+    elif select == 3:
+        name = input("Какую папку удалить: ")
+        delete_dir(name)
+    elif select == 4:
+        name = input("Какую папку создать: ")
+        create_dir(name)
+    elif select == 0:
+        break
